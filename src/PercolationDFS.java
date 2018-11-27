@@ -27,7 +27,7 @@ public class PercolationDFS implements IPercolate {
 	 */
 	public PercolationDFS(int n) {
 		myGrid = new int[n][n];
-//		myOpenCount = 0;
+		myOpenCount = 0;
 		for (int[] row : myGrid)
 			Arrays.fill(row, BLOCKED);
 	}
