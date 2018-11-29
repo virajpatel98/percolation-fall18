@@ -1,6 +1,7 @@
 
 public class PercolationUF implements IPercolate{
 	
+	int mySize;
 	int[][] myGrid;
 	int myOpenCount;
 	IUnionFind myFinder;
@@ -11,7 +12,7 @@ public class PercolationUF implements IPercolate{
 	
 	public PercolationUF(int size, IUnionFind finder) {
 		myGrid = new int[size][size];
-		myOpenCount = size;
+		mySize = size;
 		myFinder= finder;
 		myFinder.initialize(size*size+2);
 		VTOP = size*size;
@@ -39,6 +40,7 @@ public class PercolationUF implements IPercolate{
 		
 		
 		myGrid[row][col] = OPEN;
+		myOpenCount++;
 		
 		if(inBounds (row+1, col) && isOpen (row+1, col)) myFinder.union(getIndex(row, col), getIndex(row+1, col));
 		
@@ -51,7 +53,7 @@ public class PercolationUF implements IPercolate{
 		
 		if(row ==0) myFinder.union(getIndex(row,col), VTOP);
 		
-		if (row == myOpenCount -1) myFinder.union(getIndex(row,col), VBOTTOM);
+		if (row == mySize -1) myFinder.union(getIndex(row,col), VBOTTOM);
 	
 		
 	}
