@@ -1,22 +1,67 @@
-Your name
-Your netid
+Viraj Patel
+vp94
 
 Copy/Paste results from PercolationStats using PercolationDFS
+
+Was informed through Piazza to not include PercolationStats for PercolationDFS due to time running out.
 
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
 
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.101
+200		0.591	0.010	0.110
+400		0.590	0.006	0.577
+800		0.594	0.004	4.703
+
+Received StackOverflow error for all grid sizes larger than 800. 
+
 
 Copy/Paste results from PercolationStats using PercolationBFS
 
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.170
+200		0.591	0.010	0.128
+400		0.590	0.006	0.702
+800		0.594	0.004	4.000
+1600	0.592	0.002	21.746
+3200	0.593	0.001	164.875
 
 Copy/Paste results from PercolationStats using PercolationUF 
 with the QuickUWPC UnionFind implementation.
 
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.058
+200		0.591	0.010	0.112
+400		0.590	0.006	0.505
+800		0.594	0.004	3.202
+1600	0.592	0.002	17.765
+3200	0.593	0.001	246.691
+
 1. How does doubling the grid size affect running time (keeping # trials fixed)
+
+For smaller grid sizes, doubling the grid size leads to a doubling in run time. But as the grid size increases, the run time
+begins to increase by greater factors up until it reaches an exponential increase in time taken to run for a doubling in grid size.
+That is, as the grid size approaches a number as large as 3200, run time increases exponentially, but as grid size is small, i.e 
+100, then run time only doubles. 
 
 
 2. How does doubling the number of trials affect running time.
+
+simulation data for 40 trials
+grid	mean	stddev	time
+100		0.594	0.015	0.109
+200		0.591	0.009	0.202
+400		0.591	0.005	0.999
+800		0.593	0.004	6.067
+1600	0.593	0.002	34.233
+3200	0.593	0.001	427.203
+
+As the number of trials increases, the run time doubles. So essentially for each grid size, when trial size increased from 20 to 40,
+run time also increased by a factor of 2 for each respective run time.
 
 
 3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
