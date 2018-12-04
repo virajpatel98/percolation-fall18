@@ -1,10 +1,6 @@
 Viraj Patel
 vp94
 
-Copy/Paste results from PercolationStats using PercolationDFS
-
-Was informed through Piazza to not include PercolationStats for PercolationDFS due to time running out.
-
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
 
@@ -45,8 +41,8 @@ grid	mean	stddev	time
 
 For smaller grid sizes, doubling the grid size leads to a doubling in run time. But as the grid size increases, the run time
 begins to increase by greater factors up until it reaches an exponential increase in time taken to run for a doubling in grid size.
-That is, as the grid size approaches a number as large as 3200, run time increases exponentially, but as grid size is small, i.e 
-100, then run time only doubles. 
+The majority of the data points seem to correspond to a doubling in grid size leading to a 5x increase in run time, up until much 
+larger grid sizes where an exponential increase is seen. 
 
 
 2. How does doubling the number of trials affect running time.
@@ -60,8 +56,12 @@ grid	mean	stddev	time
 1600	0.593	0.002	34.233
 3200	0.593	0.001	427.203
 
-As the number of trials increases, the run time doubles. So essentially for each grid size, when trial size increased from 20 to 40,
-run time also increased by a factor of 2 for each respective run time.
+As the number of trials increases, the run time doubles. So essentially for each respective grid size, 
+when trial size was increased from 20 to 40, run time increased by a factor of 2. 
 
 
 3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+
+The largest grid size you can run in 24 hours with 20 trials is 216,000. My data, for the most part, about a 5x increase in time for 
+when the grid size doubles. So I used the equation 5(time) = 2(grid size) and input 86400 seconds (24 hrs) for time and then just 
+solved for grid size. 
