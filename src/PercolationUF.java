@@ -20,7 +20,7 @@ public class PercolationUF implements IPercolate{
 		
 	}
 	
-	public int getIndex(int row, int col) {
+	public int getValue(int row, int col) {
 
 		return (row * myGrid.length + col);
 		
@@ -42,18 +42,18 @@ public class PercolationUF implements IPercolate{
 		myGrid[row][col] = OPEN;
 		myOpenCount++;
 		
-		if(inBounds (row+1, col) && isOpen (row+1, col)) myFinder.union(getIndex(row, col), getIndex(row+1, col));
+		if(inBounds (row+1, col) && isOpen (row+1, col)) myFinder.union(getValue(row, col), getValue(row+1, col));
 		
-		if(inBounds (row, col+1) && isOpen (row, col+1)) myFinder.union(getIndex(row, col), getIndex(row, col+1));
+		if(inBounds (row, col+1) && isOpen (row, col+1)) myFinder.union(getValue(row, col), getValue(row, col+1));
 		
-		if(inBounds (row, col-1) && isOpen (row, col-1)) myFinder.union(getIndex(row, col), getIndex(row, col-1));
+		if(inBounds (row, col-1) && isOpen (row, col-1)) myFinder.union(getValue(row, col), getValue(row, col-1));
 		
-		if(inBounds (row-1, col) && isOpen (row-1, col)) myFinder.union(getIndex(row, col), getIndex(row-1, col));
+		if(inBounds (row-1, col) && isOpen (row-1, col)) myFinder.union(getValue(row, col), getValue(row-1, col));
 		
 		
-		if(row ==0) myFinder.union(getIndex(row,col), VTOP);
+		if(row ==0) myFinder.union(getValue(row,col), VTOP);
 		
-		if (row == mySize -1) myFinder.union(getIndex(row,col), VBOTTOM);
+		if (row == mySize -1) myFinder.union(getValue(row,col), VBOTTOM);
 	
 		
 	}
@@ -69,7 +69,7 @@ public class PercolationUF implements IPercolate{
 	public boolean isFull(int row, int col) {
 		if(! inBounds(row, col)) throw new IndexOutOfBoundsException();
 		
-		return myFinder.connected(getIndex(row,col), VTOP);
+		return myFinder.connected(getValue(row,col), VTOP);
 	}
 
 	@Override

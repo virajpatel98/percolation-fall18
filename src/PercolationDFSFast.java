@@ -5,6 +5,7 @@ public class PercolationDFSFast extends PercolationDFS {
 		super(n);
 	}
 	
+	@Override
 	protected void updateOnOpen(int row, int col) {
 		
 		int check = 0;
